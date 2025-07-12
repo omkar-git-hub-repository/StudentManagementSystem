@@ -7,7 +7,7 @@ import org.hibernate.Transaction;
 import com.practice.Utility.HibernateUtility;
 import com.practice.entity.Student;
 
-public class GetDataByIDMain {
+public class UpdateData {
 	
 	public static void main(String[] args) {
 		
@@ -17,8 +17,14 @@ public class GetDataByIDMain {
 		
 		Transaction transaction = session.beginTransaction();
 		
-		Student st = session.find(Student.class, 2);
-		System.out.println(st.toString());
+		//fetching the data
+		Student s =  session.find(Student.class, 3);
+		s.setfName("Suyash");
+		s.setCity("Bengluru");
+		s.setCource("Java");
+		
+		
+		
 		
 		transaction.commit();
 		session.close();
