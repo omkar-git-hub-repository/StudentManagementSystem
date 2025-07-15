@@ -27,7 +27,7 @@ public class AddStudent {
 		Students s = new Students();
 		Scanner sc = new Scanner (System.in);
 		
-		System.out.println("Enter Student ID :");
+		System.out.println("Enter New Student ID :");
 		s.setId(sc.nextInt());
 		sc.nextLine();  // To avoid continuos input from console
 		
