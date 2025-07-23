@@ -1,22 +1,40 @@
 package student.entity;
 
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table (name = "student_data")
+@Table(name = "student_data")
 public class Students {
 
-	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
-	
+
 	private String email;
 	private String course;
-	
+
 	private int marks;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "vehicle_id")
+	private StudentVehicles vehicle;
+
+	public StudentVehicles getVehicle() {
+		return vehicle;
+	}
+	public void setVehicle(StudentVehicles vehicle) {
+		this.vehicle = vehicle;
+	}
+
 
 	public int getId() {
 		return id;
@@ -61,9 +79,7 @@ public class Students {
 	@Override
 	public String toString() {
 		return "Students [id=" + id + ", name=" + name + ", email=" + email + ", course=" + course + ", marks=" + marks
-				+ "]";
+				+ ", vehicle=" + vehicle + "]";
 	}
-	
-	
 
 }

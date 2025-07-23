@@ -1,15 +1,20 @@
 package student.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class StudentVehicles {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    
     private int vehicleId;
     private String vehicleName;
     private String vehicleType;
+
 
     public int getVehicleId() {
         return vehicleId;
