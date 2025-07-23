@@ -20,8 +20,8 @@ public class App {
 					+ "\n2. Display All Student"
 					+ "\n3. Search by Student ID" 
 					+ "\n4. Update Student " 
-					+ "\n5. Delete Student " 
-
+					+ "\n5. Delete Student "
+					+ "\n7. Set Vehicle Details" 
 					+ "\n6. Exit");
 
 			// *************** Switch Case *************** //
@@ -35,6 +35,7 @@ public class App {
 				//Students s = new Students();
 				AddStudent as = new AddStudent();
 				as.addStudent();
+				
 				break;
 				
 			case 2 :
@@ -57,6 +58,12 @@ public class App {
 			case 6 :
 				System.out.println("Existing..Goodbye...!");
 				System.exit(0);
+			
+			case 7 :
+				SetStudentVehicles setVehicle = new SetStudentVehicles();
+				setVehicle.setVehicleDetails();
+				break;
+
 			
 			default :
 				System.out.println("Enter a valid choise ");
