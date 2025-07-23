@@ -23,6 +23,8 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<mapping class="student.entity.Students" />
+		<mapping class="student.entity.StudentVehicles" />
+
 
 	</session-factory>
 </hibernate-configuration>
